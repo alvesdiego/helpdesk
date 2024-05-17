@@ -1,9 +1,4 @@
-package com.dsaa.helpdesk.domains.enums;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+package com.dsaa.helpdesk.domain.enums;
 
 public enum Perfil {
 
