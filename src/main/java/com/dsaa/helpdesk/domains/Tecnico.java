@@ -1,5 +1,6 @@
 package com.dsaa.helpdesk.domains;
 
+import com.dsaa.helpdesk.domain.enums.Perfil;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 
@@ -15,10 +16,17 @@ public class Tecnico extends Pessoa{
     @OneToMany(mappedBy = "tecnico")
     private List<Chamado> chamados = new ArrayList<>();
 
-    public Tecnico(UUID id, String nome, String cpf, String email, String senha, List<Chamado> chamados) {
-        super(id, nome, cpf, email, senha);
-        this.chamados = chamados;
+    public Tecnico() {
+        super();
+        addPerfil(Perfil.TECNICO);
     }
+
+
+    public Tecnico(UUID id, String nome, String cpf, String email, String senha) {
+        super(id, nome, cpf, email, senha);
+        addPerfil(Perfil.TECNICO);
+    }
+
 
     public List<Chamado> getChamados() {
         return chamados;

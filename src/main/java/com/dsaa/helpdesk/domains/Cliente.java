@@ -6,7 +6,6 @@ import jakarta.persistence.OneToMany;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 
@@ -23,10 +22,9 @@ public class Cliente extends Pessoa{
         addPerfil(Perfil.CLIENTE);
     }
 
-    public Cliente(UUID id, String nome, String cpf, String email, String senha, List<Chamado> chamados) {
+    public Cliente(UUID id, String nome, String cpf, String email, String senha) {
         super(id, nome, cpf, email, senha);
         addPerfil(Perfil.CLIENTE);
-        this.chamados = chamados;
     }
 
     public List<Chamado> getChamados() {
