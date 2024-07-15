@@ -36,6 +36,7 @@ public class DBService {
         tecnicoRepository.saveAll(List.of(tec1));
         clienteRepository.saveAll(List.of(cli1));
         chamadoRepository.saveAll(List.of(c1));
+        System.out.println("### INSERT NO BANCO DE DADOS ###");
 
     }
 
