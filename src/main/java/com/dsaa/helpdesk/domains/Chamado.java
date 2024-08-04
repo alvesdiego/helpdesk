@@ -17,12 +17,13 @@ public class Chamado implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Integer id;
 
-    @JsonFormat(pattern = "dd/mm/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataAbertura = LocalDate.now();
-    @JsonFormat(pattern = "dd/mm/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataFechamento;
+
     private Prioridade prioridade;
     private Status status;
     private String titulo;
@@ -36,7 +37,7 @@ public class Chamado implements Serializable {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    public Chamado(UUID id, Prioridade prioridade, Status status, String titulo, String observacoes, Tecnico tecnico, Cliente cliente) {
+    public Chamado(Integer id, Prioridade prioridade, Status status, String titulo, String observacoes, Tecnico tecnico, Cliente cliente) {
         this.id = id;
         this.prioridade = prioridade;
         this.status = status;
@@ -49,11 +50,11 @@ public class Chamado implements Serializable {
     public Chamado() {
     }
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

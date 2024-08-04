@@ -6,10 +6,10 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Entity
@@ -19,7 +19,7 @@ public abstract class Pessoa implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    protected UUID id;
+    protected Integer id;
     protected String nome;
 
     @Column(unique = true)
@@ -33,7 +33,7 @@ public abstract class Pessoa implements Serializable {
     @CollectionTable(name = "PERFIS")
     protected Set<Integer> perfis = new HashSet<>();
 
-    @JsonFormat(pattern = "dd/mm/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate dataCriacao = LocalDate.now();
 
     public Pessoa() {
@@ -41,7 +41,7 @@ public abstract class Pessoa implements Serializable {
         addPerfil(Perfil.CLIENTE);
     }
 
-    public Pessoa(UUID id, String nome, String cpf, String email, String senha) {
+    public Pessoa(Integer id, String nome, String cpf, String email, String senha) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -50,11 +50,11 @@ public abstract class Pessoa implements Serializable {
         addPerfil(Perfil.CLIENTE);
     }
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -98,9 +98,11 @@ public abstract class Pessoa implements Serializable {
         this.perfis.add(perfil.getCodigo());
     }
 
+
     public LocalDate getDataCriacao() {
         return dataCriacao;
     }
+
 
     public void setDataCriacao(LocalDate dataCriacao) {
         this.dataCriacao = dataCriacao;
