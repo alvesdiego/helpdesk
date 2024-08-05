@@ -3,11 +3,6 @@ package com.dsaa.helpdesk.domain.dtos;
 import com.dsaa.helpdesk.domain.Tecnico;
 import com.dsaa.helpdesk.domain.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.CollectionTable;
-import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.FetchType;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -31,6 +26,7 @@ public class TecnicoDTO implements Serializable {
 
     public TecnicoDTO(){
         super();
+        setPerfil(Perfil.CLIENTE);
     }
 
     public TecnicoDTO(Tecnico obj) {
@@ -42,6 +38,7 @@ public class TecnicoDTO implements Serializable {
         this.senha = obj.getSenha();
         this.perfis = obj.getPerfis().stream().map( x -> x.getCodigo()).collect(Collectors.toSet());
         this.dataCriacao = obj.getDataCriacao();
+        setPerfil(Perfil.CLIENTE);
     }
 
     public Integer getId() {
