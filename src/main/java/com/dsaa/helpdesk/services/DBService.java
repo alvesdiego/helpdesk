@@ -3,9 +3,9 @@ package com.dsaa.helpdesk.services;
 import com.dsaa.helpdesk.domain.enums.Perfil;
 import com.dsaa.helpdesk.domain.enums.Prioridade;
 import com.dsaa.helpdesk.domain.enums.Status;
-import com.dsaa.helpdesk.domains.Chamado;
-import com.dsaa.helpdesk.domains.Cliente;
-import com.dsaa.helpdesk.domains.Tecnico;
+import com.dsaa.helpdesk.domain.Chamado;
+import com.dsaa.helpdesk.domain.Cliente;
+import com.dsaa.helpdesk.domain.Tecnico;
 import com.dsaa.helpdesk.repositories.ChamadoRepository;
 import com.dsaa.helpdesk.repositories.ClienteRepository;
 import com.dsaa.helpdesk.repositories.PessoaRepository;
@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.List;
 
 @Service
 public class DBService {

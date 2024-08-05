@@ -1,4 +1,4 @@
-package com.dsaa.helpdesk.domains;
+package com.dsaa.helpdesk.domain;
 
 import com.dsaa.helpdesk.domain.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonIgnore;

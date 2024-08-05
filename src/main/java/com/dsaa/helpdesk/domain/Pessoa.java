@@ -1,4 +1,4 @@
-package com.dsaa.helpdesk.domains;
+package com.dsaa.helpdesk.domain;
 
 import com.dsaa.helpdesk.domain.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;

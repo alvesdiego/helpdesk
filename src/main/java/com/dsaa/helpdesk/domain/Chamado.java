@@ -1,4 +1,4 @@
-package com.dsaa.helpdesk.domains;
+package com.dsaa.helpdesk.domain;
 
 import com.dsaa.helpdesk.domain.enums.Prioridade;
 import com.dsaa.helpdesk.domain.enums.Status;
@@ -8,7 +8,6 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.UUID;
 
 @Entity
 public class Chamado implements Serializable {
