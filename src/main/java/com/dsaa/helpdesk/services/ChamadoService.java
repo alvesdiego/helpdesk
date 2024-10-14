@@ -59,7 +59,7 @@ public class ChamadoService {
         if(obj.getStatus().equals(2)){
             chamado.setDataFechamento(LocalDate.now());
         }
-        
+
         chamado.setTecnico(tecnico);
         chamado.setCliente(cliente);
         chamado.setPrioridade(Prioridade.toEnum(obj.getPrioridade()));
